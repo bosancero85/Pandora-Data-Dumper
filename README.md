@@ -48,8 +48,9 @@ File and Data Dumper
     
           BY USING THIS SOFTWARE, YOU AGREE TO TAKE FULL RESPONSIBILITY FOR YOUR ACTIONS.
         ==================================================================================
-
+```
  - INSTALL -
-
+```text
 pip install -r requirements.txt
+```
 

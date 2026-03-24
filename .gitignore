@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+
+# Loot & Private Data
+loot_storage/
+*.zip
+*.db
+*.key
+wlan.txt
+
+# Executables
+build/
+dist/
+*.spec
+
+# OS specific
+.DS_Store
+Thumbs.db

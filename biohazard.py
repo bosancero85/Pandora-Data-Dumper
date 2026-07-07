@@ -1,3 +1,4 @@
+import subprocess
 import tkinter as tk
 import random
 import winreg

